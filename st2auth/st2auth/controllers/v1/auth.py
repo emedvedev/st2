@@ -132,7 +132,7 @@ class TokenController(rest.RestController):
                 username = impersonate_user
             else:
                 impersonate_user = getattr(request, 'impersonate_user', None)
-                nickname_origin = getattr(request, 'nickname_origin', None)
+                nickname_origin = getattr(request, 'nickname_origin', None) #?
             if impersonate_user is not None:
                 try:
                     username = User.get_by_nickname(impersonate_user, nickname_origin).username
